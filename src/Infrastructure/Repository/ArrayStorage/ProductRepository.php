@@ -37,7 +37,8 @@ class ProductRepository implements ProductRepositoryInterface
 
     public function get(Id $id): Product
     {
-        if (empty($productDatum = self::PRODUCT_DATA[$id->getValue()])) {
+        $productDatum = self::PRODUCT_DATA[$id->getValue()] ?? null;
+        if (!$productDatum) {
             throw new EntityNotFoundException('Product is not found.');
         }
 

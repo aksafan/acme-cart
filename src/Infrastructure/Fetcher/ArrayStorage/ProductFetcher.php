@@ -9,6 +9,9 @@ use App\Model\EntityNotFoundException;
 use App\ReadModel\Product\ProductFetcherInterface;
 use DateTimeImmutable;
 
+/**
+ * A sample of how Fetchers could be extended
+ */
 class ProductFetcher implements ProductFetcherInterface
 {
     private const PRODUCT_DATA = [
@@ -37,7 +40,8 @@ class ProductFetcher implements ProductFetcherInterface
 
     public function fetch(string $id): Product
     {
-        if (empty($productDatum = self::PRODUCT_DATA[$id])) {
+        $productDatum = self::PRODUCT_DATA[$id] ?? null;
+        if (!$productDatum) {
             throw new EntityNotFoundException('Product is not found.');
         }
 

@@ -1,0 +1,26 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method App\\\\Infrastructure\\\\Fetcher\\\\ArrayStorage\\\\CartFetcher\\:\\:fetchAll\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Infrastructure/Fetcher/ArrayStorage/CartFetcher.php
+
+		-
+			message: "#^Method App\\\\Infrastructure\\\\Fetcher\\\\DbStorage\\\\CartFetcher\\:\\:fetchAll\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Infrastructure/Fetcher/DbStorage/CartFetcher.php
+
+		-
+			message: "#^Empty array passed to foreach\\.$#"
+			count: 1
+			path: src/Model/Cart/Domain/Entity/Cost/Calculator/DiscountCost.php
+
+		-
+			message: "#^Constructor of class App\\\\Model\\\\Cart\\\\Domain\\\\Entity\\\\Event\\\\ProductOutOfStock has an unused parameter \\$product\\.$#"
+			count: 1
+			path: src/Model/Cart/Domain/Entity/Event/ProductOutOfStock.php
+
+		-
+			message: "#^Method App\\\\ReadModel\\\\Cart\\\\CartFetcherInterface\\:\\:fetchAll\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/ReadModel/Cart/CartFetcherInterface.php

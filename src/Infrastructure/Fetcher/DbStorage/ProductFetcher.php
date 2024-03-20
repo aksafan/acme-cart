@@ -7,33 +7,26 @@ namespace App\Infrastructure\Fetcher\DbStorage;
 use App\Model\Cart\Domain\Entity\Product\Product;
 use App\ReadModel\NotFoundException;
 use App\ReadModel\Product\ProductFetcherInterface;
-use PDO;
+use Exception;
 
+/**
+ * A sample of how Fetchers could be extended
+ */
 final readonly class ProductFetcher implements ProductFetcherInterface
 {
-    public function __construct(
-        private PDO $db
-    ) {
+    public function __construct()
+    {
     }
 
+    /**
+     * @param string $id
+     *
+     * @return Product
+     *
+     * @throws NotFoundException|Exception
+     */
     public function fetch(string $id): Product
     {
-        $query = '
-            SELECT * 
-            FROM product 
-            WHERE id = ?
-        ';
-        $statement = $this->db->prepare($query);
-        $statement->execute([$id]);
-
-        $productRow = $statement->fetch();
-
-        if (!$productRow) {
-            throw new NotFoundException('Product is not found.');
-        }
-
-        // TODO: Hydration logic is here
-
-        return new Product();
+        throw new Exception('Need to implement fetch method!');
     }
 }

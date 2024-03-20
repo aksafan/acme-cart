@@ -10,5 +10,10 @@ interface CartFetcherInterface
 {
     public function fetch(string $id): Cart;
 
+    /**
+     * @param string $cartId
+     *
+     * @return array[]
+     */
     public function fetchAll(string $cartId): array;
 }

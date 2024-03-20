@@ -11,6 +11,7 @@ use DomainException;
 
 final class Product implements AggregateRoot
 {
+    /** @var object[] $events */
     private array $events = [];
 
     public function __construct(
@@ -28,7 +29,7 @@ final class Product implements AggregateRoot
         return $quantity <= $this->quantity;
     }
 
-    public function checkout($quantity): void
+    public function checkout(int $quantity): void
     {
         if ($quantity > $this->quantity) {
             throw new DomainException(sprintf('Only %d items are available.', $this->quantity));
@@ -46,6 +47,9 @@ final class Product implements AggregateRoot
         return $this->price->amount;
     }
 
+    /**
+     * @return object[]
+     */
     public function releaseEvents(): array
     {
         $events = $this->events;
@@ -54,12 +58,12 @@ final class Product implements AggregateRoot
         return $events;
     }
 
-    private function recordEvent($event): void
+    private function recordEvent(object $event): void
     {
         $this->events[] = $event;
     }
 
-    private function setQuantity($quantity): void
+    private function setQuantity(int $quantity): void
     {
         $this->quantity = $quantity;
         if (0 === $quantity) {

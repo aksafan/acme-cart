@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace App\Model\Cart\Domain\Entity\Cart;
 
-use App\Model\AggregateRoot;
 use App\Model\Cart\Domain\Entity\Product\Id as ProductId;
 use DateTimeImmutable;
 use DomainException;
 
-class Cart implements AggregateRoot
+class Cart
 {
     public function __construct(
         public readonly Id $id,
@@ -63,12 +62,5 @@ class Cart implements AggregateRoot
     public function clear(): void
     {
         $this->items = [];
-    }
-
-    /**
-     * @codeCoverageIgnore
-     */
-    public function releaseEvents(): array
-    {
     }
 }

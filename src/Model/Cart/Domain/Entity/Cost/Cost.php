@@ -9,6 +9,7 @@ class Cost
     public function __construct(
         public readonly float $value,
         private readonly string $currency,
+        /** @var Discount[] $discounts */
         private array $discounts = []
     ) {
     }

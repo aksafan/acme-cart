@@ -39,7 +39,10 @@ test-unit-coverage:
 	docker-compose run -e XDEBUG_MODE=coverage --rm acme-cart-php-cli php vendor/bin/phpunit --testsuite=unit --coverage-clover var/clover.xml --coverage-html var/coverage --coverage-filter=src/
 
 phpstan:
-	docker-compose run --rm acme-cart-php-cli php vendor/bin/phpstan analyse --level max src tests
+	docker-compose run --rm acme-cart-php-cli php vendor/bin/phpstan analyse --level max --configuration phpstan.neon src/
+
+phpstan-baseline:
+	docker-compose run --rm acme-cart-php-cli php vendor/bin/phpstan analyse --level max --configuration phpstan.neon src/ --generate-baseline
 
 phpcs:
 	docker-compose run --rm acme-cart-php-cli php vendor/bin/phpcs

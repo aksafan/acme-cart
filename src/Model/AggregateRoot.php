@@ -6,5 +6,8 @@ namespace App\Model;
 
 interface AggregateRoot
 {
+    /**
+     * @return object[]
+     */
     public function releaseEvents(): array;
 }

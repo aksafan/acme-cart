@@ -105,7 +105,8 @@ final readonly class CartRepository implements CartRepositoryInterface
 
     public function get(Id $id): Cart
     {
-        if (empty($cartDatum = self::CART_DATA[$id->getValue()])) {
+        $cartDatum = self::CART_DATA[$id->getValue()] ?? null;
+        if (!$cartDatum) {
             throw new EntityNotFoundException('Cart is not found.');
         }
 

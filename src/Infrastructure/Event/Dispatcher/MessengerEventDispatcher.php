@@ -8,6 +8,11 @@ use App\Model\EventDispatcher;
 
 final readonly class MessengerEventDispatcher implements EventDispatcher
 {
+    /**
+     * @param object[] $events
+     *
+     * @return void
+     */
     public function dispatch(array $events): void
     {
         foreach ($events as $event) {
