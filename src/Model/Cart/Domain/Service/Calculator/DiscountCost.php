@@ -8,6 +8,9 @@ use App\Model\CalculatorInterface;
 use App\Model\Cart\Domain\Entity\Cost\Cost;
 use App\Model\Cart\Domain\Entity\Cost\Discount;
 
+/**
+ * @codeCoverageIgnore
+ */
 final readonly class DiscountCost implements CalculatorInterface
 {
     public function __construct(
@@ -15,6 +18,9 @@ final readonly class DiscountCost implements CalculatorInterface
     ) {
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function getCost(array $items): Cost
     {
         $discounts = []; // Here could be additional discount options

@@ -24,11 +24,11 @@ final readonly class OfferDiscountCost implements CalculatorInterface
         // But extracting this logic to OfferCost will help to add more offers in the future
         // without digging into BaseCost logic
         foreach ($items as $item) {
-            if ($item->getProductCode() === 'R01' && $item->quantity > 1) { // TODO: replace `R01` with entity
+            if ($item->productCode === 'R01' && $item->quantity > 1) { // TODO: replace `R01` with entity
                 $itemsWithOffer = round($item->quantity / 2, 0, PHP_ROUND_HALF_DOWN);
                 $offerDiscount = $item->getPriceAmount() * 50 / 100;  // TODO: replace 50 with entity
                 $totalOfferDiscount += $itemsWithOffer * $offerDiscount;
-                $new = new Discount($totalOfferDiscount, '');
+                $new = new Discount($totalOfferDiscount, 'OfferDiscountCost');
                 $cost->addDiscount($new);
             }
         }

@@ -29,7 +29,7 @@ class Cart
     public function add(CartItem $item): void
     {
         foreach ($this->items as $i => $current) {
-            if ($current->getProductCode() === $item->getProductCode()) {
+            if ($current->productCode === $item->productCode) {
                 $this->items[$i] = $current->addQuantity($item->quantity);
                 return;
             }
@@ -40,7 +40,7 @@ class Cart
     public function changeQuantity(string $productCode, int $quantity): void
     {
         foreach ($this->items as $i => $current) {
-            if ($current->getProductCode() === $productCode) {
+            if ($current->productCode === $productCode) {
                 $this->items[$i] = $current->changeQuantity($quantity);
                 return;
             }
@@ -51,7 +51,7 @@ class Cart
     public function remove(string $productCode): void
     {
         foreach ($this->items as $i => $current) {
-            if ($current->getProductCode() === $productCode) {
+            if ($current->productCode === $productCode) {
                 unset($this->items[$i]);
                 return;
             }
