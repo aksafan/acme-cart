@@ -6,8 +6,8 @@ namespace Unit\Model\Cart\Domain\Entity\Product;
 
 use App\Infrastructure\DataTypes\Id;
 use App\Infrastructure\DataTypes\Price;
+use App\Model\Product\Domain\Entity\Event\ProductOutOfStock;
 use App\Model\Product\Domain\Entity\Product\Product;
-use App\Model\Cart\Domain\Entity\Event\ProductOutOfStock;
 use DateTimeImmutable;
 use DomainException;
 use PHPUnit\Framework\TestCase;

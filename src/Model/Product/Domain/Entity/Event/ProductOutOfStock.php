@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Model\Cart\Domain\Entity\Event;
+namespace App\Model\Product\Domain\Entity\Event;
 
 use App\Model\Product\Domain\Entity\Product\Product;
 

@@ -11,9 +11,9 @@ parameters:
 			path: src/Infrastructure/Fetcher/DbStorage/CartFetcher.php
 
 		-
-			message: "#^Constructor of class App\\\\Model\\\\Cart\\\\Domain\\\\Entity\\\\Event\\\\ProductOutOfStock has an unused parameter \\$product\\.$#"
+			message: "#^Constructor of class App\\\\Model\\\\Product\\\\Domain\\\\Entity\\\\Event\\\\ProductOutOfStock has an unused parameter \\$product\\.$#"
 			count: 1
-			path: src/Model/Cart/Domain/Entity/Event/ProductOutOfStock.php
+			path: src/Model/Product/Domain/Entity/Event/ProductOutOfStock.php
 
 		-
 			message: "#^Empty array passed to foreach\\.$#"
