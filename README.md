@@ -89,6 +89,9 @@ Log coverage inside application code could be achieved with injecting `LoggerInt
 
 ## Notes
 
+- [Http](src%2FInfrastructure%2FHttp) layer was build in primitive and easy way just for test purpose.
+- Some of the application parts could be seen as a redundant or not completed - this is done to show application grow potential and 
+point future enlargement.
 - Event system was implemented for future usage and keeping code clean. 
 In order to use it you need to implement `App\Model\AggregateRoot` interface inside your `Aggregate` and just add needed entities while calling `App\Model\Flusher::flush()`.
 As an example `App\Model\Product\Domain\Entity\Event\ProductOutOfStock` was added to [Product.php](src%2FModel%2FProduct%2FDomain%2FEntity%2FProduct%2FProduct.php) aggregate.
