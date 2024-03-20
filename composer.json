@@ -1,0 +1,32 @@
+{
+    "name": "aksafan/acme-cart",
+    "description": "A proof of concept for Acme Widget Co new sales system.",
+    "type": "project",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "aksafan",
+            "email": "subzero_ck@ukr.net"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": ">=8.2",
+        "monolog/monolog": "^3.5",
+        "ramsey/uuid": "^4.7",
+        "webmozart/assert": "^1.11"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^11.0",
+        "squizlabs/php_codesniffer": "^3.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
