@@ -2,10 +2,10 @@
 
 namespace App\Infrastructure\Repository\ArrayStorage;
 
-use App\Model\Cart\Domain\Entity\Product\Id;
-use App\Model\Cart\Domain\Entity\Product\Price;
-use App\Model\Cart\Domain\Entity\Product\Product;
-use App\Model\Cart\Domain\Repository\ProductRepositoryInterface;
+use App\Infrastructure\DataTypes\Id;
+use App\Infrastructure\DataTypes\Price;
+use App\Model\Product\Domain\Entity\Product\Product;
+use App\Model\Product\Domain\Repository\ProductRepositoryInterface;
 use App\Model\EntityNotFoundException;
 use DateTimeImmutable;
 

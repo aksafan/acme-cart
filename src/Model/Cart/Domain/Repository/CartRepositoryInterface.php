@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Model\Cart\Domain\Repository;
 
 use App\Model\Cart\Domain\Entity\Cart\Cart;
-use App\Model\Cart\Domain\Entity\Cart\Id;
+use App\Infrastructure\DataTypes\Id;
 
 interface CartRepositoryInterface
 {

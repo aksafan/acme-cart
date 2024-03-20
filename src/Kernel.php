@@ -9,9 +9,9 @@ use App\Infrastructure\Http\Request;
 use App\Infrastructure\Http\RequestFactory;
 use App\Infrastructure\Repository\ArrayStorage\CartRepository;
 use App\Model\Cart\Application\UseCase\CalculateCartCost;
-use App\Model\Cart\Domain\Entity\Cost\Calculator\BaseCost;
-use App\Model\Cart\Domain\Entity\Cost\Calculator\DiscountCost;
-use App\Model\Cart\Domain\Entity\Cost\Calculator\OfferDiscountCost;
+use App\Model\Cart\Domain\Service\Calculator\BaseCost;
+use App\Model\Cart\Domain\Service\Calculator\DiscountCost;
+use App\Model\Cart\Domain\Service\Calculator\OfferDiscountCost;
 use App\Model\DeliveryMethodFactory;
 
 class Kernel

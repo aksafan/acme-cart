@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Model\Cart\Domain\Entity\Cost\Calculator;
+namespace App\Model\Cart\Domain\Service\Calculator;
 
 use App\Model\CalculatorInterface;
 use App\Model\Cart\Domain\Entity\Cost\Cost;

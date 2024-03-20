@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Model\Cart\Application\UseCase\CalculateCartCost;
 
-use App\Model\Cart\Domain\Entity\Cart\Id;
+use App\Infrastructure\DataTypes\Id;
 
 final readonly class Command
 {

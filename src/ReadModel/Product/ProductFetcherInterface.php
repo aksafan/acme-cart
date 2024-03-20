@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\ReadModel\Product;
 
-use App\Model\Cart\Domain\Entity\Product\Product;
+use App\Model\Product\Domain\Entity\Product\Product;
 
 interface ProductFetcherInterface
 {

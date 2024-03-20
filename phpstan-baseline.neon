@@ -11,14 +11,14 @@ parameters:
 			path: src/Infrastructure/Fetcher/DbStorage/CartFetcher.php
 
 		-
-			message: "#^Empty array passed to foreach\\.$#"
-			count: 1
-			path: src/Model/Cart/Domain/Entity/Cost/Calculator/DiscountCost.php
-
-		-
 			message: "#^Constructor of class App\\\\Model\\\\Cart\\\\Domain\\\\Entity\\\\Event\\\\ProductOutOfStock has an unused parameter \\$product\\.$#"
 			count: 1
 			path: src/Model/Cart/Domain/Entity/Event/ProductOutOfStock.php
+
+		-
+			message: "#^Empty array passed to foreach\\.$#"
+			count: 1
+			path: src/Model/Cart/Domain/Service/Calculator/DiscountCost.php
 
 		-
 			message: "#^Method App\\\\ReadModel\\\\Cart\\\\CartFetcherInterface\\:\\:fetchAll\\(\\) return type has no value type specified in iterable type array\\.$#"

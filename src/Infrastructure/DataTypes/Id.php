@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Model\Cart\Domain\Entity\Cart;
+namespace App\Infrastructure\DataTypes;
 
 use Ramsey\Uuid\Uuid;
 use Webmozart\Assert\Assert;

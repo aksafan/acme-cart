@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Model\Cart\Domain\Entity\Cost\Calculator;
+namespace App\Model\Cart\Domain\Service\Calculator;
 
 use App\Model\CalculatorInterface;
 use App\Model\Cart\Domain\Entity\Cost\Cost;
@@ -26,7 +26,7 @@ final readonly class OfferDiscountCost implements CalculatorInterface
         foreach ($items as $item) {
             if ($item->getProductCode() === 'R01' && $item->quantity > 1) { // TODO: replace `R01` with entity
                 $itemsWithOffer = round($item->quantity / 2, 0, PHP_ROUND_HALF_DOWN);
-                $offerDiscount = $item->product->getPriceAmount() * 50 / 100;  // TODO: replace 50 with entity
+                $offerDiscount = $item->getPriceAmount() * 50 / 100;  // TODO: replace 50 with entity
                 $totalOfferDiscount += $itemsWithOffer * $offerDiscount;
                 $new = new Discount($totalOfferDiscount, '');
                 $cost->addDiscount($new);

@@ -8,7 +8,7 @@ use App\Infrastructure\Http\HttpStatusCode;
 use App\Infrastructure\Http\Request;
 use App\Infrastructure\Http\Response;
 use App\Model\Cart\Application\UseCase\CalculateCartCost;
-use App\Model\Cart\Domain\Entity\Cart\Id;
+use App\Infrastructure\DataTypes\Id;
 
 readonly class CartController
 {

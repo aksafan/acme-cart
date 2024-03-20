@@ -4,10 +4,8 @@ namespace App\Infrastructure\Repository\ArrayStorage;
 
 use App\Model\Cart\Domain\Entity\Cart\Cart;
 use App\Model\Cart\Domain\Entity\Cart\CartItem;
-use App\Model\Cart\Domain\Entity\Cart\Id;
-use App\Model\Cart\Domain\Entity\Product\Id as ProductId;
-use App\Model\Cart\Domain\Entity\Product\Price;
-use App\Model\Cart\Domain\Entity\Product\Product;
+use App\Infrastructure\DataTypes\Id;
+use App\Infrastructure\DataTypes\Price;
 use App\Model\Cart\Domain\Repository\CartRepositoryInterface;
 use App\Model\EntityNotFoundException;
 use DateTimeImmutable;
@@ -112,18 +110,11 @@ final readonly class CartRepository implements CartRepositoryInterface
 
         $cartItems = [];
 
-        foreach ($cartDatum['Items'] as $productId => $item) {
-            $product = new Product(
-                id: new ProductId($productId),
-                date: new DateTimeImmutable('2000-01-01 00:00:00-05:00'),
-                code: $item[0]['Code'],
-                name: $item[0]['Product'],
-                price: new Price($item[0]['Price'], $item[0]['Currency']),
-                quantity: $item[0]['Quantity']
-            );
+        foreach ($cartDatum['Items'] as $item) {
             $cartItem = new CartItem(
-                product: $product,
-                quantity: $item['Quantity']
+                productCode: $item[0]['Code'],
+                quantity: $item['Quantity'],
+                price: new Price($item[0]['Price'], $item[0]['Currency'])
             );
             $cartItems[] = $cartItem;
         }

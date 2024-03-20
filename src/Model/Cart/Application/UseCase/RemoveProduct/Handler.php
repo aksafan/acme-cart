@@ -18,7 +18,7 @@ final readonly class Handler
     public function handle(Command $command): void
     {
         $cart = $this->carts->get($command->cartId);
-        $cart->remove($command->productId);
+        $cart->remove($command->productCode);
 
         $this->flusher->flush();
     }

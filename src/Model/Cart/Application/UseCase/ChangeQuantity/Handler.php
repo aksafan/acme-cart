@@ -19,7 +19,7 @@ final readonly class Handler
     {
         $cart = $this->carts->get($command->cartId);
 
-        $cart->changeQuantity($command->productId, $command->quantity);
+        $cart->changeQuantity($command->productCode, $command->quantity);
 
         $this->flusher->flush();
     }

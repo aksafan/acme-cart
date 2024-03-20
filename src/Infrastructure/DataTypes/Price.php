@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Model\Cart\Domain\Entity\Product;
+namespace App\Infrastructure\DataTypes;
 
 use Webmozart\Assert\Assert;
 

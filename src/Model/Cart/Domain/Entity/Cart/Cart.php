@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Model\Cart\Domain\Entity\Cart;
 
-use App\Model\Cart\Domain\Entity\Product\Id as ProductId;
+use App\Infrastructure\DataTypes\Id;
 use DateTimeImmutable;
 use DomainException;
 
@@ -29,7 +29,7 @@ class Cart
     public function add(CartItem $item): void
     {
         foreach ($this->items as $i => $current) {
-            if ($current->getProductId() === $item->getProductId()) {
+            if ($current->getProductCode() === $item->getProductCode()) {
                 $this->items[$i] = $current->addQuantity($item->quantity);
                 return;
             }
@@ -37,10 +37,10 @@ class Cart
         $this->items[] = $item;
     }
 
-    public function changeQuantity(ProductId $id, int $quantity): void
+    public function changeQuantity(string $productCode, int $quantity): void
     {
         foreach ($this->items as $i => $current) {
-            if ($current->getProductId() === $id) {
+            if ($current->getProductCode() === $productCode) {
                 $this->items[$i] = $current->changeQuantity($quantity);
                 return;
             }
@@ -48,10 +48,10 @@ class Cart
         throw new DomainException('CartItem is not found.');
     }
 
-    public function remove(ProductId $id): void
+    public function remove(string $productCode): void
     {
         foreach ($this->items as $i => $current) {
-            if ($current->getProductId() === $id) {
+            if ($current->getProductCode() === $productCode) {
                 unset($this->items[$i]);
                 return;
             }

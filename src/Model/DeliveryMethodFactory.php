@@ -14,12 +14,11 @@ class DeliveryMethodFactory
     {
         if ($totalPrice < DeliveryMethodInterface::ORDER_COST_50) {
             return new LowPriceDeliveryMethod();
-        } elseif (
-            $totalPrice < DeliveryMethodInterface::ORDER_COST_90
-        ) {
-            return new MediumPriceDeliveryMethod();
-        } else {
-            return new HighPriceDeliveryMethod();
         }
+        if ($totalPrice < DeliveryMethodInterface::ORDER_COST_90) {
+            return new MediumPriceDeliveryMethod();
+        }
+
+        return new HighPriceDeliveryMethod();
     }
 }

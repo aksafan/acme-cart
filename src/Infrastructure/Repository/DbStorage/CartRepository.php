@@ -3,7 +3,7 @@
 namespace App\Infrastructure\Repository\DbStorage;
 
 use App\Model\Cart\Domain\Entity\Cart\Cart;
-use App\Model\Cart\Domain\Entity\Cart\Id;
+use App\Infrastructure\DataTypes\Id;
 use App\Model\Cart\Domain\Repository\CartRepositoryInterface;
 use App\Model\EntityNotFoundException;
 use Exception;

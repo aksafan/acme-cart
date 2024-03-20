@@ -4,59 +4,52 @@ declare(strict_types=1);
 
 namespace App\Model\Cart\Domain\Entity\Cart;
 
-use App\Model\Cart\Domain\Entity\Product\Id as ProductId;
-use App\Model\Cart\Domain\Entity\Product\Product;
-use DomainException;
+use App\Infrastructure\DataTypes\Price;
 
 final readonly class CartItem
 {
     public function __construct(
-        public Product $product,
-        public int $quantity
+        public string $productCode,
+        public int $quantity,
+        public Price $price
     ) {
-        if (!$product->canBeCheckout($quantity)) {
-            throw new DomainException('Quantity is too big.');
-        }
-    }
-
-    public function getProductId(): ProductId
-    {
-        return $this->product->id;
     }
 
     public function getProductCode(): string
     {
-        return $this->product->code;
+        return $this->productCode;
     }
 
     public function getCost(): float
     {
-        return $this->getPriceAmount() * $this->quantity;
+        return $this->price->amount * $this->quantity;
+    }
+
+    public function getPriceAmount(): float
+    {
+        return $this->price->amount;
     }
 
     public function getCurrency(): string
     {
-        return $this->product->getCurrency();
+        return $this->price->currency;
     }
 
     public function addQuantity(int $quantity): CartItem
     {
         return new self(
-            product: $this->product,
-            quantity: $this->quantity + $quantity
+            productCode: $this->productCode,
+            quantity: $this->quantity + $quantity,
+            price: $this->price
         );
     }
 
     public function changeQuantity(int $quantity): CartItem
     {
         return new self(
-            product: $this->product,
-            quantity: $quantity
+            productCode: $this->productCode,
+            quantity: $quantity,
+            price: $this->price
         );
-    }
-
-    private function getPriceAmount(): float
-    {
-        return $this->product->getPriceAmount();
     }
 }
