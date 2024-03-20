@@ -10,7 +10,8 @@ class Cost
         public readonly float $value,
         private readonly string $currency,
         private array $discounts = []
-    ) {}
+    ) {
+    }
 
     public function addDiscount(Discount $discount): void
     {

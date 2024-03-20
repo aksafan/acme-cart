@@ -15,9 +15,12 @@ final readonly class CartRepository implements CartRepositoryInterface
 {
     public function __construct(
         private PDO $db
-    ) {}
+    ) {
+    }
 
-    public function add(Cart $cart): void {}
+    public function add(Cart $cart): void
+    {
+    }
 
     public function get(Id $id): Cart
     {

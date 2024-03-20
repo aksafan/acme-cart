@@ -12,7 +12,8 @@ final readonly class Handler
     public function __construct(
         private CartRepositoryInterface $carts,
         private Flusher $flusher
-    ) {}
+    ) {
+    }
 
     public function handle(Command $command): void
     {

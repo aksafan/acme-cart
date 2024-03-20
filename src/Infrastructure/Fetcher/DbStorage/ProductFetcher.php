@@ -13,7 +13,8 @@ final readonly class ProductFetcher implements ProductFetcherInterface
 {
     public function __construct(
         private PDO $db
-    ) {}
+    ) {
+    }
 
     public function fetch(string $id): Product
     {

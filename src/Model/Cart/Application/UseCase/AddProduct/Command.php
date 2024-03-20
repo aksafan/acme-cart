@@ -12,5 +12,6 @@ final readonly class Command
         public Id $cartId,
         public string $productCode,
         public int $quantity
-    ) {}
+    ) {
+    }
 }

@@ -14,7 +14,8 @@ final readonly class Handler
         private CartRepositoryInterface $carts,
         private CalculatorInterface $calculator,
         private DeliveryMethodFactory $deliveryMethodFactory
-    ) {}
+    ) {
+    }
 
     public function handle(Command $command): string
     {

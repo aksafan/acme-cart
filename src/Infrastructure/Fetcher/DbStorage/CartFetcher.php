@@ -12,7 +12,8 @@ final readonly class CartFetcher implements CartFetcherInterface
 {
     public function __construct(
         private PDO $db
-    ) {}
+    ) {
+    }
 
     public function fetchAll(string $cartId): array
     {
@@ -28,5 +29,7 @@ final readonly class CartFetcher implements CartFetcherInterface
         return $statement->fetchAll();
     }
 
-    public function fetch(string $id): Cart {}
+    public function fetch(string $id): Cart
+    {
+    }
 }

@@ -15,7 +15,8 @@ final readonly class Handler
         private CartRepositoryInterface $carts,
         private ProductRepositoryInterface $products,
         private Flusher $flusher
-    ) {}
+    ) {
+    }
 
     public function handle(Command $command): void
     {

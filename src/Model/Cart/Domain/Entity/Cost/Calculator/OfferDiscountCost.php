@@ -21,7 +21,8 @@ final readonly class OfferDiscountCost implements CalculatorInterface
         $cost = $this->next->getCost($items);
 
         // Could be an overhead at the first glance and should be moved to BaseCost item iteration part
-        // But extracting this logic to OfferCost will help to add more offers in the future without digging into BaseCost logic
+        // But extracting this logic to OfferCost will help to add more offers in the future
+        // without digging into BaseCost logic
         foreach ($items as $item) {
             if ($item->getProductCode() === 'R01' && $item->quantity > 1) { // TODO: replace `R01` with entity
                 $itemsWithOffer = round($item->quantity / 2, 0, PHP_ROUND_HALF_DOWN);

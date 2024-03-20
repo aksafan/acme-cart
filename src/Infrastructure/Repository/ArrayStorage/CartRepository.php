@@ -135,5 +135,7 @@ final readonly class CartRepository implements CartRepositoryInterface
         );
     }
 
-    public function add(Cart $cart): void {}
+    public function add(Cart $cart): void
+    {
+    }
 }

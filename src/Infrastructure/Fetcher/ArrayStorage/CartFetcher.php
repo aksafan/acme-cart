@@ -7,7 +7,11 @@ use App\ReadModel\Cart\CartFetcherInterface;
 
 final readonly class CartFetcher implements CartFetcherInterface
 {
-    public function fetch(string $id): Cart {}
+    public function fetch(string $id): Cart
+    {
+    }
 
-    public function fetchAll(string $cartId): array {}
+    public function fetchAll(string $cartId): array
+    {
+    }
 }

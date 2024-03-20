@@ -16,7 +16,8 @@ class Cart implements AggregateRoot
         public readonly DateTimeImmutable $date,
         /** @var CartItem[] $items */
         private array $items,
-    ) {}
+    ) {
+    }
 
     /**
      * @return CartItem[]
@@ -67,5 +68,7 @@ class Cart implements AggregateRoot
     /**
      * @codeCoverageIgnore
      */
-    public function releaseEvents(): array {}
+    public function releaseEvents(): array
+    {
+    }
 }

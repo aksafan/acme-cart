@@ -20,7 +20,8 @@ final class Product implements AggregateRoot
         public readonly string $name,
         public readonly Price $price,
         private int $quantity
-    ) {}
+    ) {
+    }
 
     public function canBeCheckout(int $quantity): bool
     {
